@@ -2,16 +2,29 @@ package entidades;
 
 public class ContaEspecial extends ContaCorrente {
 	
-	public ContaEspecial(int numero, double saldo, int talao, double limite) {
-		super(numero, saldo, talao);
+	public ContaEspecial(int numero, double saldo, double limite) {
+		super(numero, saldo, numero);
 		this.limite = limite;
 	}
+	private double limite = 500;
+	private double selic = 0.1;
 
-	private double limite;
-	//calcula juros METODO
-	//public double calcularJuros()
-
-	//Selic ta 2% ao ano, deve dar uns 0,15 ao mês mais ou menos
-
-
+	public double getLimite() {
+		return limite;
+	}
+public double limite() {
+		return limite;
+	}
+	public void setLimite(double limite) {
+		this.limite = limite;
+	}
+	public double getSelic() {
+		return selic;
+	}
+	public void setSelic(double selic) {
+		this.selic = selic;
+	}
+	public double calculaJurosEsp() {
+		System.out.println("JUROS: " + saldo * selic);
+		return saldo * selic;}
 }
